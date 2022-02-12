@@ -1,0 +1,12 @@
+Elmer version: 8.4
+Elmer revision: 1c584234
+Elmer compilation date: 2020-04-29
+Solver input file: mismip.sif
+File started at: 2022/01/19 19:29:44
+ 
+Variables in columns of matrix: ./results.dat
+   1: value: time scalar variable
+   2: volume: flow solution
+   3: max: velocity 1
+   4: sum: groundedmask
+   5: value: cpu time (s)

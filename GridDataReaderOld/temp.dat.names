@@ -1,0 +1,8 @@
+Elmer version: 9.0
+Elmer revision: eeb9b0d2
+Elmer compilation date: 2020-12-11
+Solver input file: case2d.sif
+File started at: 2022/01/20 08:16:54
+ 
+Variables in columns of matrix: ./temp.dat
+   1: mean: temp
