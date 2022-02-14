@@ -3,10 +3,12 @@ Header
 End
 
 Simulation
+  Coordinate System = Cartesian 3D
   Steady State Max Iterations = 1
   Simulation Type = Steady
+  Extruded Mesh Levels = 10
   Output Intervals = 1
-  Post File = TestExtrudedLayers.vtu
+  Post File = TestSurfaces.vtu
   Max Output Level = 4
   Extruded Mesh Levels = 10
  
@@ -15,8 +17,18 @@ Simulation
 End
 
 Body 1
-  Equation = 1
-  Material = 1
+  !Equation = 1
+  Initial Condition = 1
+End
+
+Body 2
+  !Equation = 2
+  Initial Condition = 2
+End
+
+Body 3
+  !Equation = 3
+  Initial Condition = 3
 End
 
 Equation 1
@@ -24,6 +36,18 @@ Equation 1
 End
 
 Material 1
+End
+
+Initial Condition 1
+  Bed Variable = String bedrock
+End
+
+Initial Condition 2
+  Zs Variable = String zs
+End
+
+Initial Condition 3
+  Zb Variable = String zb
 End
 
 Solver 1
