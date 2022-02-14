@@ -6,8 +6,9 @@ Simulation
   Steady State Max Iterations = 1
   Simulation Type = Steady
   Output Intervals = 1
-  Post File = Test1.vtu
+  Post File = TestExtrudedLayers.vtu
   Max Output Level = 4
+  Extruded Mesh Levels = 10
  
   Steady State Max Iterations = 1
   Steady State Min Iterations = 1

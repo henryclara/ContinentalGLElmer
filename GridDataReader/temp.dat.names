@@ -1,8 +1,8 @@
 Elmer version: 9.0
 Elmer revision: eeb9b0d2
 Elmer compilation date: 2020-12-11
-Solver input file: netcdfclara.sif
-File started at: 2022/02/14 14:48:53
+Solver input file: cgl.sif
+File started at: 2022/02/14 15:18:50
  
 Variables in columns of matrix: ./temp.dat
    1: mean: bedrock
