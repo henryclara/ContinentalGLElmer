@@ -6,7 +6,7 @@ Simulation
   Steady State Max Iterations = 1
   Simulation Type = Steady
   Output Intervals = 1
-  Post File = Test8.vtu
+  Post File = Test1.vtu
   Max Output Level = 4
  
   Steady State Max Iterations = 1
@@ -35,14 +35,14 @@ Solver 1
   !Time Dim Name = String "time"
   !X Dim Name = String "x1" 
   !Y Dim Name = String "y1"
-  X Dim Name = String "y" 
-  Y Dim Name = String "x"
+  X Dim Name = String "x" 
+  Y Dim Name = String "y"
 
   !Time Var Name = String "time"
   !X Var Name = String "x1"
   !Y Var Name = String "y1"
-  X Var Name = String "y"
-  Y Var Name = String "x"
+  X Var Name = String "x"
+  Y Var Name = String "y"
 
   !--- Interpolation variables
   X Epsilon  = Real 1.0e-2 
