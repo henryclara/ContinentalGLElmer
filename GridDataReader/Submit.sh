@@ -25,7 +25,7 @@ echo $ELMER_SOLVER_HOME
 
 #YearCounter=$1
 #YearCounterFormatted=$(printf %06d $YearCounter)
-#sed -i "s/FORMAT/${YearCounterFormatted}/g" Init.sif
+#sed -i "s/FORMAT/${YearCounterFormatted}/g" Forward.sif
 #echo YearCounter is: 
 make compile
 make ini

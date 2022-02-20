@@ -42,14 +42,14 @@ Simulation
   Timestepping Method = "bdf"
   BDF Order = 1
   Timestep Intervals = 100.0
-  Output Intervals = 50
-  Timestep Sizes = 0.5
+  Output Intervals = 10
+  Timestep Sizes = 0.1
 
   Initialize Dirichlet Conditions = Logical False
   Steady State Max Iterations = 1
   Steady State Min Iterations = 1
 
-	Restart File="Forward025950.result"
+	Restart File="TestAllSolvers000000.result"
 	Restart Before Initial Conditions = Logical True
 	!Specify name of result file. Used for restarts!!
   Output File = "Forward026000.result"
@@ -138,9 +138,7 @@ Material 1
   Viscosity = Real $eta
   Viscosity Exponent = Real $1.0/n
   Critical Shear Rate = Real 1.0e-15
-  !Sea level = Real 0.0
-  Sea level = Variable Time
-    Real Procedure "src/SeaLevel" "getSeaLevel"
+  Sea level = Real 0.0
   Glen Enhancement Factor = Real 1.0
 ! the temperature to switch between the
 ! two regimes in the flow law
@@ -153,7 +151,7 @@ Material 1
   Max Zs = Real 1.0e6
 
   !! Bed condition
-  Min Zb = Equals BedBump
+  Min Zb = Equals bedrock
   Max Zb = Real 1.0e6
   Cauchy = Logical True
 End
@@ -222,14 +220,12 @@ Solver 4
 
   Exported Variable 2 = -dofs 1 "dSdt"
   Exported Variable 3 = -dofs 1 "dS"
-  Exported Variable 4 = -dofs 1 "BedInit"
-  Exported Variable 5 = -dofs 1 "RiseIntoShelf"
-  Exported Variable 6 = -dofs 1 "BedBump"
   Exported Variable 7 = -dofs 1 "FluxInit"
   Flow Model = String "Stokes"
 End
 
 Solver 5
+  Exec Solver = Never
   Equation = String "StressSolver"
   Procedure =  File "ElmerIceSolvers" "ComputeDevStress"
   ! this is just a dummy, hence no output is needed
@@ -388,7 +384,7 @@ Solver 11
   Variable DOFs = 1
 
   Toler = Real 1.0e-3
-  Bedrock Variable = String "BedBump"
+  Bedrock Variable = String "bedrock"
 End
 
 Solver 12
@@ -459,8 +455,9 @@ End
 Boundary Condition 1
   Name = "back"
   Target Boundaries = 1
-	Velocity 1 = Variable FluxInit
-		Real Procedure "src/BedrockBump" "IceFluxAtBack"
+	Velocity 1 = Real 136.0
+	!Velocity 1 = Variable FluxInit
+	!	Real Procedure "src/BedrockBump" "IceFluxAtBack"
 	Velocity 2 = Real 0.0
 End
 
@@ -503,7 +500,7 @@ Boundary Condition 5
 !
 ! Condition where the bed is stuck
 !
-  Zb = Equals BedBump
+  Zb = Equals bedrock
   Zb Condition = Variable GroundedMask
     Real MATC "tx + 0.5"
 !
