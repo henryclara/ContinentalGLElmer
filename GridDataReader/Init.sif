@@ -315,7 +315,7 @@ Solver 8
   Operator 2 = Height
   Variable 3 = Zb
   Operator 3 = Bottom
-  Exported Variable 1 = -dofs 1 "Height"
+  !Exported Variable 1 = String "Height"
 End
 
 Solver 9
@@ -454,8 +454,9 @@ End
 Boundary Condition 1
   Name = "back"
   Target Boundaries = 1
-	Velocity 1 = Variable height
-		Real MATC "25.6*tanh(tx/568.2)+136.3"
+	Velocity 1 = Real 136
+	!Velocity 1 = Variable Height
+	!	Real MATC "25.6*tanh(tx/568.2)+136.3"
 	!Velocity 1 = Variable FluxInit
 	!	Real Procedure "src/BedrockBump" "IceFluxAtBack"
 	Velocity 2 = Real 0.0
