@@ -122,13 +122,14 @@ End
 Body Force 2
    Zs Accumulation Flux 1 = Real 0.0e0
    Zs Accumulation Flux 2 = Real 0.0e0 !m/a
-   Zs Accumulation Flux 3 = Real 1.2
+   Zs Accumulation Flux 3 = Real 0.3
 End
 
 !! no melting/accretion under ice/shelf
 Body Force 3
-  Zb Accumulation = Variable Time
-    Real Procedure "src/USF_BMB" "GetBMB"
+  Zb Accumulation = Real 0.0
+  !Zb Accumulation = Variable Time
+  !  Real Procedure "src/USF_BMB" "GetBMB"
 End
 
 !---------------------------------------------------

@@ -41,8 +41,8 @@ Simulation
 
   Timestepping Method = "bdf"
   BDF Order = 1
-  Timestep Intervals = 100.0
-  Output Intervals = 10
+  Timestep Intervals = 300
+  Output Intervals = 2
   Timestep Sizes = 0.1
 
   Initialize Dirichlet Conditions = Logical False
@@ -52,6 +52,7 @@ Simulation
 	Restart File="TestAllSolvers000000.result"
 	Restart Before Initial Conditions = Logical True
 	!Specify name of result file. Used for restarts!!
+  !Post File = "Output.vtu"
   Output File = "Forward026000.result"
   max output level = 30
 End
@@ -117,14 +118,14 @@ End
 Body Force 2
    Zs Accumulation Flux 1 = Real 0.0e0
    Zs Accumulation Flux 2 = Real 0.0e0 !m/a
-   Zs Accumulation Flux 3 = Real 1.2
+   Zs Accumulation Flux 3 = Real 0.3
 End
 
 !! no melting/accretion under ice/shelf
 Body Force 3
-  !Zb Accumulation = Real 
-	Zb Accumulation = Variable Time
-			Real Procedure "src/USF_BMB" "GetBMB"
+  Zb Accumulation = Real 0.0
+	!Zb Accumulation = Variable Time
+	!		Real Procedure "src/USF_BMB" "GetBMB"
 End
 
 !---------------------------------------------------
@@ -261,7 +262,7 @@ Solver 6
 End
 
 Solver 7
-  !Exec Solver = Never
+   !Exec Solver = Never
    Equation = "SolveDistance"
 
    Procedure = "src/DistanceSolveRD" "DistanceSolver1"

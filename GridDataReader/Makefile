@@ -11,7 +11,7 @@ NumProcx=10
 NumProcy=8
 NumProcz=1
 
-InputSif=Init.sif
+InputSif=Forward.sif
 
 
 
