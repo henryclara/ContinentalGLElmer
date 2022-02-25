@@ -1,23 +1,12 @@
 !------------------------------------------------------------------
 ! Isotropic mesh adaptation:
 !------------------------------------------------------------------
-$Bedrock=-580.0
 
 Header
 Mesh DB "." "Mesh"
 End
 
 Constants
-Bump Amplitude = Real 500.0
-Sigmax = Real 8000.0
-Sigmay = Real 8000.0
-x0 = Real 40000.0
-y0 = Real 0.0
-ZbInit = Real -270.0
-ZsInit = Real 30.0
-RiseIntoShelf = Real 50.0
-Incline = Real 0.0
-InclineShelf = Real 0.0
 Alpha = Real 0.76
 G = Real 0.02
 A = Real 0.04
@@ -43,13 +32,9 @@ Body Force = 1
 Initial Condition = 1
 End
 Initial Condition 1
-BedInit = Real $Bedrock
-Bedrock = Variable BedInit
-Real Procedure "src/BedrockBump" "BedrockBump"
-Zb = Variable Bedrock
-Real Procedure "src/BedrockBump" "ZbAdj"
-Zs = Variable Zb
-Real Procedure "src/BedrockBump" "ZsAdj"
+Bedrock = Equals bedrock
+Zb = Equals Zb
+Zs = Equals Zs
 END
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -111,8 +96,6 @@ Exported Variable 2 = Zb
 Exported Variable 3 = Bedrock
 Exported Variable 4 = Distance
 Exported Variable 5 = ElementSize
-Exported Variable 6 = BedInit
-Exported Variable 7 = RiseIntoShelf
 !Exported Variable 8 = Sea level
 End
 
