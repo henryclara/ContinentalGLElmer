@@ -13,7 +13,7 @@ $A = 4.6e-25*yearinsec*1.0e18
 $n = 3.0
 $eta = 1.0/(2.0*A)^(1.0/n)
 $gravity = -9.8*yearinsec^2
-!$C = 3.812e6/(1.0e6*yearinsec^(1.0/3.0))
+!$C = 7.624e6/(1.0e6*yearinsec^(1.0/3.0))
 
 
 Header
@@ -511,7 +511,7 @@ Boundary Condition 5
   Slip Coefficient 3 = Variable Coordinate 1
     Real Procedure "src/USF_Contact" "SlidCoef_Contact"
   Sliding Law = String "Weertman"
-  Weertman Friction Coefficient = Real 7.624e7
+  Weertman Friction Coefficient = Real $C
   Weertman Exponent = Real $(1.0/3.0)
   Weertman Linear Velocity = Real 0.001
   ! Options are 'Last Grounded' (default), 'First Floating' or 'Discontinuous'
