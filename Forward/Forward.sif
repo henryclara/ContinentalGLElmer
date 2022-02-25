@@ -52,7 +52,7 @@ Simulation
 	Restart File="../../Init/Mesh/Init000000.result"
 	Restart Before Initial Conditions = Logical True
 	!Specify name of result file. Used for restarts!!
-  Output File = "MATC000000.result"
+  Output File = "InitialVel000000.result"
   max output level = 30
 End
 
@@ -399,7 +399,7 @@ Solver 13
   Equation = "result output"
   Procedure = "ResultOutputSolve" "ResultOutputSolver"
   Save Geometry Ids = Logical True ! add this line if you want to access boundaries in Paraview
-  Output File Name = File "MATC000000"
+  Output File Name = File "InitialVel000000"
   Output Format = String vtu
 End
 

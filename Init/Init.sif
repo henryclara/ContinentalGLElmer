@@ -49,7 +49,7 @@ Simulation
   Steady State Min Iterations = 6
 
 	!Specify name of result file. Used for restarts!!
-  Output File = "Init000000.result"
+  Output File = "InitVel000000.result"
   max output level = 30
 End
 
@@ -422,7 +422,7 @@ Solver 12
   Equation = "result output"
   Procedure = "ResultOutputSolve" "ResultOutputSolver"
   Save Geometry Ids = Logical True ! add this line if you want to access boundaries in Paraview
-  Output File Name = File "Init000000"
+  Output File Name = File "InitVel000000"
   Output Format = String vtu
 End
 
