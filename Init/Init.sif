@@ -91,7 +91,7 @@ End
 !! for ice
 Initial Condition 1
   Pressure = Real 0.0
-  Velocity 1 = Real 136.0
+  Velocity 1 = Real 0.0
   Velocity 2 = Real 0.0
   Velocity 3 = Real 0.0
   FluxInit = Real 90000
