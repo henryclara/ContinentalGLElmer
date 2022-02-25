@@ -52,7 +52,7 @@ Simulation
 	Restart File="../../Init/Mesh/Init000000.result"
 	Restart Before Initial Conditions = Logical True
 	!Specify name of result file. Used for restarts!!
-  Output File = "Forward000000.result"
+  Output File = "ForwardSeaLevel000000.result"
   max output level = 30
 End
 
@@ -138,7 +138,9 @@ Material 1
   Viscosity = Real $eta
   Viscosity Exponent = Real $1.0/n
   Critical Shear Rate = Real 1.0e-15
-  Sea level = Real 0.0
+  !Sea level = Real 0.0
+  Sea level = Variable Time
+    Real Procedure "src/SeaLevel" "getSeaLevel"
   Glen Enhancement Factor = Real 1.0
 ! the temperature to switch between the
 ! two regimes in the flow law
@@ -397,7 +399,7 @@ Solver 13
   Equation = "result output"
   Procedure = "ResultOutputSolve" "ResultOutputSolver"
   Save Geometry Ids = Logical True ! add this line if you want to access boundaries in Paraview
-  Output File Name = File "Forward000000"
+  Output File Name = File "ForwardSeaLevel000000"
   Output Format = String vtu
 End
 
