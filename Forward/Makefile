@@ -33,6 +33,7 @@ compile:
 	elmerf90 src/GroundedMaskSolver.f90 -o src/GroundedMaskSolver
 	elmerf90 src/SeaLevel.f90 -o src/SeaLevel
 	elmerf90 src/USF_BMB.f90 -o src/USF_BMB; elmerf90 -o src/USF_Contact src/USF_Contact.f90 src/USF_Sliding.f90
+	elmerf90 src/BasalFriction.f90 -o src/BasalFriction
 
 clean:
 	rm -fr results/*
