@@ -223,7 +223,7 @@ Solver 4
   Exported Variable 2 = -dofs 1 "dSdt"
   Exported Variable 3 = -dofs 1 "dS"
   Exported Variable 4 = -dofs 1 "FluxInit"
-  !Exported Variable 5 = -dofs 1 "Time"
+  Exported Variable 5 = -dofs 1 "Time"
   Flow Model = String "Stokes"
 End
 
