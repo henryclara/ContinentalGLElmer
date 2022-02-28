@@ -52,7 +52,7 @@ Simulation
 	Restart File="../../Init/Mesh/Init000000.result"
 	Restart Before Initial Conditions = Logical True
 	!Specify name of result file. Used for restarts!!
-  Output File = "TestFricFortran000000.result"
+  Output File = "TestTimeOutput000000.result"
   max output level = 30
 End
 
@@ -222,7 +222,7 @@ Solver 4
 
   Exported Variable 2 = -dofs 1 "dSdt"
   Exported Variable 3 = -dofs 1 "dS"
-  Exported Variable 7 = -dofs 1 "FluxInit"
+  Exported Variable 4 = -dofs 1 "FluxInit"
   Flow Model = String "Stokes"
 End
 
@@ -399,7 +399,7 @@ Solver 13
   Equation = "result output"
   Procedure = "ResultOutputSolve" "ResultOutputSolver"
   Save Geometry Ids = Logical True ! add this line if you want to access boundaries in Paraview
-  Output File Name = File "TestFricFortran000000"
+  Output File Name = File "TestTimeOutput000000"
   Output Format = String vtu
 End
 
