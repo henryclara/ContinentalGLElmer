@@ -41,8 +41,8 @@ Simulation
 
   Timestepping Method = "bdf"
   BDF Order = 1
-  Timestep Intervals = 300
-  Output Intervals = 2
+  Timestep Intervals = 1
+  Output Intervals = 1
   Timestep Sizes = 0.1
 
   Initialize Dirichlet Conditions = Logical False
@@ -223,6 +223,7 @@ Solver 4
   Exported Variable 2 = -dofs 1 "dSdt"
   Exported Variable 3 = -dofs 1 "dS"
   Exported Variable 4 = -dofs 1 "FluxInit"
+  !Exported Variable 5 = -dofs 1 "Time"
   Flow Model = String "Stokes"
 End
 
