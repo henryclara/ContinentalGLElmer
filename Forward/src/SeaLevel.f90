@@ -10,7 +10,11 @@ FUNCTION getSeaLevel( Model, nodenumber, t ) RESULT( SeaLevel )
         INTEGER :: nodenumber
         REAL(KIND=dp) :: SeaLevel, t
         
-        SeaLevel = 0.0
+        IF ( t < 50 ) THEN
+                SeaLevel = 0.0
+        ELSE
+                SeaLevel = 2.0 - 0.04*t
+        END IF
 
         ! write(*,*) 'Sea level: ', SeaLevel
 END FUNCTION getSeaLevel
