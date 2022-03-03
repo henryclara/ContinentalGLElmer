@@ -92,6 +92,18 @@ Variable = GroundedMask
 Variable DOFs = 1
 End
 
+!Solver 2
+!  Exec Solver = "Before ALl"
+!  !Exec Solver = Never
+!  Equation = GroundedMask
+!  Procedure = "ElmerIceSolvers" "GroundedSolver"
+!  Variable = GroundedMask
+!  Variable DOFs = 1
+
+!  Toler = Real 1.0e-3
+!  Bedrock Variable = String "bedrock"
+!End
+
 Solver 3
 !Exec Solver = Never
 !Exec Solver = Before All
@@ -166,6 +178,7 @@ End
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 Boundary Condition 1
 Target Boundaries = 1
+!Grounding Line Definition = "First Floating"
 End
 Boundary Condition 2
 Target Boundaries = 2
