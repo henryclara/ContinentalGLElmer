@@ -30,7 +30,7 @@ echo $ELMER_SOLVER_HOME
 make compile
 make ini
 make grid
-srun -l --export=ALL --cpu_bind=cores --distribution=block:cyclic -n 80 ElmerSolver_mpi Remesh.sif
+srun -l --export=ALL --cpu_bind=cores --distribution=block:cyclic -n 1 ElmerSolver_mpi Remesh.sif
 #if [ "${YearCounter}" -lt "1000" ]; then
 #	if [ "1" -eq 1 ]; then
 #					cp Mesh/*result* /work/bm1164/m300832/CodeThatWorks/SyntheticExperiments//Tolerance6/Forward/Mesh/
