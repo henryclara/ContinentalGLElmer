@@ -39,13 +39,14 @@ END
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 Body Force 1
-!Distance = Real 0.0
-!Distance Condition = Variable GroundedMask
-!Real MATC "tx"
+Distance = Real 0.0
+Distance Condition = Variable GroundedMask
+Real MATC "tx"
 !ElementSize = Real 2000.0
-!ElementSize = Variable Distance
-ElementSize = Variable Coordinate 1
-REAL MATC "if (abs(tx-115000)<15000) {500} else {2000}"
+ElementSize = Variable Distance
+REAl MATC "if (tx<5000) {500} else {2000}"
+!ElementSize = Variable Coordinate 1
+!REAL MATC "if (abs(tx-115000)<15000) {500} else {2000}"
 END
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -82,7 +83,7 @@ Solver 1
 End
 
 Solver 2
-Exec Solver = Never
+!Exec Solver = Never
 !Exec Solver = "Before All"
 !Exec Solver = "Before Simulation"
 Equation = GroundedMask
@@ -92,7 +93,7 @@ Variable DOFs = 1
 End
 
 Solver 3
-Exec Solver = Never
+!Exec Solver = Never
 !Exec Solver = Before All
 Equation = "SolveDistance"
 
@@ -129,8 +130,8 @@ Procedure = "ElmerIceSolvers" "UpdateExport"
 Exported Variable 1 = Zs
 Exported Variable 2 = Zb
 Exported Variable 3 = Bedrock
-!Exported Variable 4 = Distance
-Exported Variable 4 = ElementSize
+Exported Variable 4 = Distance
+Exported Variable 5 = ElementSize
 !Exported Variable 8 = Sea level
 End
 

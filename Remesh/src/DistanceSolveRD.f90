@@ -368,18 +368,18 @@ SUBROUTINE DistanceSolver1( Model,Solver,dt,TransientSimulation )
     IF ( Found .OR. GetLogical( BC, 'Noslip Wall BC', Found1 ) ) THEN
       DO i=1,nd
         j = Element % NodeIndexes(i)
-
+    !! CH: Excludes grounded nodes from the distance condition
         IF (Found .AND. condition(i) < 0.0) CYCLE
-        !! RD This IF makes sure that GL is zero. Rest positive upstream and downstream
+        IF (Found .AND. condition(i) > 0.0) CYCLE    
+    !! RD This IF makes sure that GL is zero. Rest positive upstream and downstream
         IF (Found .AND. condition(i) == 0.0) THEN
-
-        IF ( bperm(j) == 0 ) THEN
-          nb = nb + 1
-          aperm(nb) = j
-          bperm(j)  = nb
-          bdist(j) = work(i)
+          IF ( bperm(j) == 0 ) THEN
+            nb = nb + 1
+            aperm(nb) = j
+            bperm(j)  = nb
+            bdist(j) = work(i)
+          END IF
         END IF
-       END IF
       END DO
     END IF
   END DO
