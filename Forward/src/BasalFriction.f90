@@ -13,7 +13,8 @@ FUNCTION getBasalFriction( Model, nodenumber, t ) RESULT( C )
         x = Model % Nodes % x(nodenumber) ! get coordinates
         
         IF (x < 140000) THEN
-                C = 7.6e6/(1.0e6*yearinsec**(1.0/3.0))
+                !C = 7.6e6/(1.0e6*yearinsec**(1.0/3.0))
+                C = 3e6/(1.0e6*yearinsec**(1.0/3.0))
         ELSE
                 C = 7.6e7/(1.0e6*yearinsec**(1.0/3.0))
         END IF
