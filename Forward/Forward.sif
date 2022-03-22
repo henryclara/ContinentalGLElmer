@@ -400,7 +400,7 @@ Solver 13
   Equation = "result output"
   Procedure = "ResultOutputSolve" "ResultOutputSolver"
   Save Geometry Ids = Logical True ! add this line if you want to access boundaries in Paraview
-  Output File Name = File "TestTimeOutput000000"
+  Output File Name = File "Test1000000"
   Output Format = String vtu
 End
 
