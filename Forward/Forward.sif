@@ -41,7 +41,7 @@ Simulation
 
   Timestepping Method = "bdf"
   BDF Order = 1
-  Timestep Intervals = 300
+  Timestep Intervals = 2
   Output Intervals = 2
   Timestep Sizes = 0.1
 
@@ -49,7 +49,7 @@ Simulation
   Steady State Max Iterations = 1
   Steady State Min Iterations = 1
 
-	Restart File="../../Init/Mesh/Init000000.result"
+	Restart File="../../Init/Mesh/InitVel000000.result"
 	Restart Before Initial Conditions = Logical True
 	!Specify name of result file. Used for restarts!!
   Output File = "Forward000000.result"
