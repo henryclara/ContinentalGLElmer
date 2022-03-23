@@ -10,12 +10,12 @@
 #SBATCH --partition=compute,compute2
 #=================================================================================================================
 set -e
-echo Here comes the Nodelist:
-echo $SLURM_JOB_NODELIST
+#echo Here comes the Nodelist:
+#echo $SLURM_JOB_NODELIST
 
-echo Here comes the partition the job runs in:
-echo $SLURM_JOB_PARTITION
-cd $SLURM_SUBMIT_DIR
+#echo Here comes the partition the job runs in:
+#echo $SLURM_JOB_PARTITION
+#cd $SLURM_SUBMIT_DIR
 
 source ModulesPlusPathsMistralGCC71.sh
 
